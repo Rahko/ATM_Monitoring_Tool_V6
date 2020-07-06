@@ -1,0 +1,15 @@
+{
+    "name": "Prasanna",
+    "version": "1.0.0",
+    "description": "to run scss",
+    "main": "index.js",
+    "directories": {
+        "lib": "lib"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "scss": "node-sass"--watch bahamas.main.scss - o bahamas.main.css "
+    },
+    "author": "",
+    "license": "ISC"
+}

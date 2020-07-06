@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.loading_box{
+    height: 100px;
+    width: 100px;
+    border: 6px solid darkslategrey;
+    border-radius: 50%;
+    border-top-color: dodgerblue;
+    /* border-left-color: floralwhite; */
+    animation: loading .5s linear infinite;
+}
+
+@keyframes loading{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

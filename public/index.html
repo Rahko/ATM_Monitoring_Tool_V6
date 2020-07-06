@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/styles/lib/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/styles/lib/main.css">
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/styles/lib/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/styles/lib/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/styles/lib/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/styles/lib/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/styles/main.css">
+    <link rel="stylesheet" href="%PUBLIC_URL%/styles/kendo.css"></link>
+    <link href="%PUBLIC_URL%/styles/kendo-bootstrap.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    
+  <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>ATM Monitoring Tool</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="text/javascript" src="%PUBLIC_URL%/scripts/lib/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/scripts/lib/jquery-ui.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/scripts/lib/popper.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/scripts/lib/bootstrap.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/scripts/lib/datatables.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/scripts/lib/select2.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/scripts/lib/jquery.mCustomScrollbar.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/scripts/lib/jquery.mousewheel.min.js"></script>
+   <script type="text/javascript" src="%PUBLIC_URL%/scripts/lib/main.core.js"></script> 
+    <script type="text/javascript" src="%PUBLIC_URL%/scripts/lib/chart2.min.js"></script>
+
+
+  <!-- <script type="text/javascript" src="%PUBLIC_URL%/plugins/datatables/jquery.dataTables.min.js"></script> -->
+    <script type="text/javascript" src="%PUBLIC_URL%/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script> 
+
+  
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script type="text/javascript">
+      setMainContentTop();
+      //createFancyScrollbarForNav();
+      dtSample();
+      tableExpander();
+      slideFilter();
+
+        // GroupedBarChart();
+        // GroupedBarChart1();
+        // DonutChart();
+        // DonutChart2();
+
+
+
+
+        // grouped bar function start
+        // function GroupedBarChart() {
+        //     var rdata= {
+        //         labels: ["J","K","L","M","N","O","P","Q","R"],
+        //         datasets: [
+        //              {
+        //                 label: "Transacted ATMs",
+        //                 backgroundColor: "rgb(74, 188, 85)",
+        //                 data: [2,3, 5, 2 , 2 , 3 , 10, 4, 4]
+        //             },
+        //         ]
+        //     };
+
+        //     var ctx = document.getElementById('grouped-bar').getContext('2d');
+        //     var groupedBar = new Chart(ctx, {
+        //         type: 'bar',
+        //         data: rdata,
+        //         options: {
+        //             scales: {
+        //                 xAxes: [{
+        //                     stacked: false,
+        //                     barPercentage: 0.3,
+        //                     barPercentage:0.8,
+        //                     categoryPercentage: 0.35,
+        //                     scaleLabel: {
+        //                         display: true,
+        //                         // labelString: ' ',
+        //                         fontStyle: "bold",
+        //                         fontSize:14,
+        //                         fontColor:'#000',
+        //                     },
+        //                     ticks: {
+        //                     fontSize:12,               
+        //                     // autoSkip: false,
+        //                     // maxRotation: 0,
+        //                     // minRotation: 0
+        //                   }
+        //                 }],
+        //                 yAxes: [{
+        //                     scaleLabel: {
+        //                         display: true,
+        //                         labelString: 'Transactions / Day',
+        //                         fontStyle: "bold",
+        //                         fontSize:14,
+        //                         fontColor:'#000',
+        //                     },    
+        //                     ticks: {
+        //                         beginAtZero: true,
+                                
+        //                     }
+        //                 }]
+        //             },
+        //             legend: {
+        //                 position: 'bottom',
+                         
+        //             }
+        //         }
+        //     });
+        // }
+        // // grouped bar function end
+
+         // grouped bar function start
+        //  function GroupedBarChart1() {
+        //     var rdata= {
+        //         labels: ["J","K","L","M","N","O","P","Q","R"],
+        //         datasets: [
+        //              {
+        //                 label: "Failed ATMs",
+        //                 backgroundColor: "rgb(226, 116, 116)",
+        //                 data: [2,3, 5, 2 , 2 , 3 , 10, 4, 4]
+        //             },
+        //         ]
+        //     };
+
+        //     var ctx = document.getElementById('grouped-bar2').getContext('2d');
+        //     var groupedBar = new Chart(ctx, {
+        //         type: 'bar',
+        //         data: rdata,
+        //         options: {
+        //             scales: {
+        //                 xAxes: [{
+        //                     stacked: false,
+        //                     barPercentage: 0.3,
+        //                     barPercentage:0.8,
+        //                     categoryPercentage: 0.35,
+        //                     scaleLabel: {
+        //                         display: true,
+        //                         // labelString: ' ',
+        //                         fontStyle: "bold",
+        //                         fontSize:14,
+        //                         fontColor:'#000',
+        //                     },
+        //                     ticks: {
+        //                     fontSize:12,               
+        //                     // autoSkip: false,
+        //                     // maxRotation: 0,
+        //                     // minRotation: 0
+        //                   }
+        //                 }],
+        //                 yAxes: [{
+        //                     scaleLabel: {
+        //                         display: true,
+        //                         labelString: 'Transactions / Day',
+        //                         fontStyle: "bold",
+        //                         fontSize:14,
+        //                         fontColor:'#000',
+        //                     },    
+        //                     ticks: {
+        //                         beginAtZero: true,
+                                
+        //                     }
+        //                 }]
+        //             },
+        //             legend: {
+        //                 position: 'bottom',
+                         
+        //             }
+        //         }
+        //     });
+        // }
+        // // grouped bar function end
+
+     // donut chart function start
+        //    function DonutChart() {
+        //     var bdata = {
+        //         datasets: [{
+        //             data: [18, 67, 15], 
+        //             backgroundColor: ['rgb(252, 201, 99)', 'rgb(87, 212, 116)', 'rgb(254, 82, 93)']
+        //         }],
+        //         labels: [
+        //             'Partially Available',
+        //             'Available',
+        //             'Out of Service'
+        //         ]
+        //     };
+        //     var ctx = document.getElementById('donut-chart').getContext('2d');
+        //     var myPieChart = new Chart(ctx,{
+        //         type: 'doughnut',
+        //         data: bdata, 
+        //         options: {
+        //             legend:{
+        //              position: 'bottom',
+        //              labels:{
+        //              fontColor: "#000",
+        //              padding:10,
+        //             }
+        //           },
+        //             cutoutPercentage:70
+        //         }
+        //     });
+        // }
+        // // donut chart function end
+        
+        // donut chart function start
+        // function DonutChart2() {
+        //     var bdata = {
+        //         datasets: [{
+        //             data: [56, 28, 16], 
+        //             backgroundColor: ['rgb(212, 87, 170)', 'rgb(82, 195, 254)', 'rgb(32, 82, 199)']
+        //         }],
+        //         labels: [
+        //             'Printers',
+        //             'Card Readers',
+        //             'Despensers'
+        //         ]
+        //     };
+        //     var ctx = document.getElementById('donut-chart2').getContext('2d');
+        //     var myPieChart = new Chart(ctx,{
+        //         type: 'doughnut',
+        //         data: bdata, 
+        //         options: {
+        //             legend:{
+        //              position: 'bottom',
+        //              labels:{
+        //              fontColor: "#000",
+        //              padding:10,
+        //             }
+        //           },
+        //             cutoutPercentage: 70
+        //         }
+        //     });
+        // }
+        // // donut chart function end
+
+  </script>
+  </body>
+</html>
